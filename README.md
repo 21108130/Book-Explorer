@@ -175,7 +175,38 @@ Storage helpers: Read book tracking (save/load/check)
 
 Components: StarRating rendering and logic
 
+📲 Building APK for Android
+Follow these steps to generate an installable APK:
 
+Install EAS CLI globally
+
+bash
+npm install -g eas-cli
+Log in to Expo account
+
+bash
+eas login
+Configure build profile (eas.json already configured)
+
+json
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
+Start the build
+
+bash
+eas build -p android --profile preview
+Download the APK
+
+After build completes, you'll receive a URL
+
+Download and install on any Android device
 
 🎨 Design Implementation
 The app follows the provided Figma design with:
@@ -212,4 +243,3 @@ Android Support	✅	APK available for testing
 Figma Design	✅	Pixel-perfect implementation
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
