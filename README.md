@@ -1,4 +1,5 @@
 Book Explorer App
+
 A React Native mobile application built with Expo and TypeScript that allows users to explore book information, search for books and authors, view ratings and reviews, and track their reading progress.
 
 📱 Case Study Overview
