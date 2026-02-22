@@ -68,38 +68,37 @@ This app was developed as part of a case study to demonstrate proficiency in Rea
 
 ## 📁 Project Structure
 Book-Explorer/
-├── app/ # Expo Router screens
-│ ├── _layout.tsx # Root layout with providers
-│ ├── index.tsx # Home screen (trending books)
-│ ├── search.tsx # Search screen
-│ ├── book/
-│ │ └── [id].tsx # Book details (dynamic route)
-│ └── +not-found.tsx # 404 screen
-├── components/ # Reusable UI components
-│ ├── BookCard.tsx # Grid display card
-│ ├── SearchResultItem.tsx # Search result row
-│ ├── StarRating.tsx # Rating stars component
-│ ├── LoadingView.tsx # Loading states
-│ ├── ErrorView.tsx # Error states with retry
-│ ├── EmptyView.tsx # Empty search states
-│ ├── ErrorBoundary.tsx # React error boundary
-│ └── ErrorFallback.tsx # Fallback UI
-├── lib/ # Core logic
-│ ├── api.ts # Open Library API client
-│ ├── types.ts # TypeScript interfaces
-│ ├── storage.ts # AsyncStorage helpers
-│ └── query-client.ts # React Query config
-├── constants/ # App constants
-│ └── colors.ts # Theme colors (Figma design)
-├── tests/ # Unit tests
-│ ├── api.test.ts # API function tests
-│ ├── storage.test.ts # Storage helper tests
-│ └── StarRating.test.tsx # Component tests
-├── assets/ # Images and icons
-│ └── screenshots/ # App screenshots for README
-│ └── IMG_5413.jpeg # Home screen screenshot
-└── server/ # Optional Express backend
-
+├── app/                               # Expo Router screens
+│   ├── _layout.tsx                    # Root layout with providers
+│   ├── index.tsx                       # Home screen (trending books)
+│   ├── search.tsx                      # Search screen
+│   ├── book/
+│   │   └── [id].tsx                    # Book details (dynamic route)
+│   └── +not-found.tsx                  # 404 screen
+├── components/                         # Reusable UI components
+│   ├── BookCard.tsx                     # Grid display card
+│   ├── SearchResultItem.tsx             # Search result row
+│   ├── StarRating.tsx                   # Rating stars component
+│   ├── LoadingView.tsx                  # Loading states
+│   ├── ErrorView.tsx                    # Error states with retry
+│   ├── EmptyView.tsx                    # Empty search states
+│   ├── ErrorBoundary.tsx                # React error boundary
+│   └── ErrorFallback.tsx                # Fallback UI
+├── lib/                                # Core logic
+│   ├── api.ts                            # Open Library API client
+│   ├── types.ts                          # TypeScript interfaces
+│   ├── storage.ts                        # AsyncStorage helpers
+│   └── query-client.ts                   # React Query config
+├── constants/                           # App constants
+│   └── colors.ts                         # Theme colors (Figma design)
+├── __tests__/                           # Unit tests
+│   ├── api.test.ts                       # API function tests
+│   ├── storage.test.ts                   # Storage helper tests
+│   └── StarRating.test.tsx               # Component tests
+├── assets/                              # Images and icons
+│   └── screenshots/                      # App screenshots for README
+│       └── IMG_5413.jpeg                  # Home screen screenshot
+└── server/                              # Optional Express backend
 
 
 ---
@@ -114,56 +113,72 @@ Book-Explorer/
 
 ### Step-by-Step Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/21108130/Book-Explorer.git
-   cd Book-Explorer
+Step-by-Step Installation
+1. Clone the repository
+bash
+git clone https://github.com/21108130/Book-Explorer.git
+cd Book-Explorer
 2. Install dependencies
-   npm install
+bash
+npm install
 # or
 yarn install
-
-Start the development server
-
+3. Start the development server
 bash
 npx expo start
-Run the app
-
-On physical device: Scan QR code with Expo Go (Android) or Camera app (iOS)
-
-On Android emulator: Press a in terminal
-
-On iOS simulator: Press i in terminal (Mac only)
-
-On web: Press w in terminal
-
+4. Run the app
+Platform	Method
+Physical Device (Android)	Scan QR code with Expo Go app
+Physical Device (iOS)	Scan QR code with Camera app
+Android Emulator	Press a in terminal
+iOS Simulator	Press i in terminal (Mac only)
+Web Browser	Press w in terminal
 
 
 📖 Usage Guide
-Home Screen
+🏠 Home Screen
+<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" align="right"/>
 Scroll through the grid of trending books
 
-Each card displays: cover image, title, author, and rating
+Each card displays:
 
-Tap any book to navigate to its details
+Book cover image
 
-<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" alt="Home Screen"/>
-Search Functionality
+Title
+
+Author name
+
+Star rating
+
+Tap any book to view details
+
+<br clear="right"/>
+🔎 Search Functionality
+<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" align="right"/>
 Navigate to the Search tab
 
 Type any book title or author name
 
-Results appear dynamically as you type (debounced)
+Results appear dynamically as you type
 
-Each result shows: cover, title, author, publication year
+Each result shows:
 
-Tap any result to view full details
+Cover thumbnail
 
-<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" alt="Search Screen"/>
-Book Details Screen
-Book Information: Full title, author name, publication year, cover image
+Title
 
-Author Bio: Biography and additional author information
+Author
+
+Publication year
+
+Tap any result for full details
+
+<br clear="right"/>
+📘 Book Details Screen
+<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" align="right"/>
+Book Information: Full title, author, publication year, cover
+
+Author Bio: Biography and information
 
 Description: Book overview/summary
 
@@ -171,42 +186,71 @@ Ratings: Star rating display with review count
 
 Reading Tracker: Toggle button to mark as read/unread
 
-<img src="https://github.com/21108130/Book-Explorer/blob/main/assets/screenshots/IMG_5413.jpeg?raw=true" width="250" alt="Book Details"/>
-Reading Progress
-Mark books as read by tapping the "Mark as Read" button
+<br clear="right"/>
+✅ Reading Progress
+Tap "Mark as Read" to save books to your reading list
 
-Your reading list persists locally on your device
+Reading list persists locally on your device
 
-No internet connection required for saved books
+Works offline - no internet needed
+
+Toggle back to "Mark as Unread" anytime
+
 
 
 
 🔌 API Integration
 Open Library API Endpoints
-Endpoint	Purpose	Example
-Search	GET https://openlibrary.org/search.json?q={query}	Search for "the hunger games"
-Book Details	GET https://openlibrary.org/works/{id}.json	Get details for OL82563W
-Author Details	GET https://openlibrary.org/authors/{id}.json	Get info for OL23919A
-Ratings	GET https://openlibrary.org/works/{id}/ratings.json	Get ratings for a book
-Cover Images	https://covers.openlibrary.org/b/id/{cover_id}-{size}.jpg	Display book covers
-Note: No API key required - Open Library API is completely free and open.
+Endpoint	Purpose	Example URL
+Search	Find books by query	https://openlibrary.org/search.json?q=harry+potter
+Book Details	Get work information	https://openlibrary.org/works/OL82563W.json
+Author Details	Get author bio	https://openlibrary.org/authors/OL23919A.json
+Ratings	Get star ratings	https://openlibrary.org/works/OL82563W/ratings.json
+Cover Images	Display book covers	https://covers.openlibrary.org/b/id/123456-L.jpg
+Note: No API key required - Open Library API is completely free and open!
+
+API Response Examples
+Search Results
+
+{
+  "docs": [
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author_name": ["J.K. Rowling"],
+      "first_publish_year": 1997,
+      "cover_i": 123456,
+      "key": "/works/OL82563W"
+    }
+  ]
+}
+
+Ratings
+{
+  "summary": {
+    "average": 4.5,
+    "count": 1250
+  }
+}
+
+
 
 
 
 ⚠️ Error Handling
 The app implements comprehensive error handling for all scenarios:
 
-Scenario	User Experience
-Network Failure	Friendly error message with "Retry" button
-No Search Results	"No books found" message with suggestions
-API Timeout	Error message with retry option
-Missing Data	Fallback UI with placeholders
-App Crash	Error Boundary catches and displays fallback
+Scenario	User Experience	Screenshot
+Network Failure	Friendly message with "Retry" button	<img src="https://via.placeholder.com/100?text=Error" width="80"/>
+No Search Results	"No books found" with suggestions	<img src="https://via.placeholder.com/100?text=Empty" width="80"/>
+API Timeout	Error message with retry option	<img src="https://via.placeholder.com/100?text=Timeout" width="80"/>
+Missing Data	Fallback UI with placeholders	<img src="https://via.placeholder.com/100?text=Fallback" width="80"/>
+App Crash	Error Boundary catches and displays fallback	<img src="https://via.placeholder.com/100?text=Crash" width="80"/>
+
+
 
 
 🧪 Testing
 Running Tests
-bash
 # Run all tests
 npm test
 
@@ -215,14 +259,6 @@ npm run test:watch
 
 # Run tests with coverage
 npm test -- --coverage
-Test Coverage
-22+ unit tests across 3 test suites
-
-API functions: Search, book details, ratings, author details
-
-Storage helpers: Read book tracking (save/load/check)
-
-Components: StarRating rendering and logic
 
 
 
@@ -231,48 +267,70 @@ Follow these steps to generate an installable APK:
 
 Install EAS CLI globally
 
-bash
 npm install -g eas-cli
-Log in to Expo account
 
-bash
+Log in to Expo
 eas login
-Configure build profile (eas.json already configured)
-
-json
+Configure build (eas.json)
 {
   "build": {
     "preview": {
       "android": {
         "buildType": "apk"
       }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      }
     }
   }
 }
-Start the build
-
-bash
-eas build -p android --profile preview
-Download the APK
-
+ Start the build
+ eas build -p android --profile preview
+ Download APK
 After build completes, you'll receive a URL
 
-Download and install on any Android device
+Download and install on any Android device (Android 6+)
+
+Local Build with Expo
+# Install turtle CLI
+npm install -g turtle-cli
+
+# Build APK locally
+turtle build:android --type apk --keystore-path /path/to/keystore
 
 
 
 🎨 Design Implementation
 The app follows the provided Figma design with:
+Color Scheme
+/* From constants/colors.ts */
+primary: '#2A9D8F',    /* Teal green - accent color */
+background: '#FFFFFF',  /* White - clean background */
+text: '#264653',        /* Dark blue-gray - main text */
+secondaryText: '#6B7280', /* Gray - secondary text */
+error: '#EF4444',       /* Red - error states */
+success: '#10B981'      /* Green - success states */
 
-Clean white background with teal/green accent colors
+Typography
+Font Family: Inter (system font on iOS, downloaded on Android)
 
-Card-based layout with subtle shadows
+Headings: Bold, 18-24px
 
-Star rating visualization matching design specs
+Body: Regular, 14-16px
 
-Proper spacing and typography using Inter font
+Captions: Light, 12px
 
-Responsive grid layout for various screen sizes
+UI Components
+Cards: Rounded corners (8px), subtle shadows
+
+Buttons: Teal green accent, rounded full
+
+Stars: Gold color, proper spacing
+
+Grid: Responsive 2-column layout
+
 
 
 🔧 Troubleshooting
@@ -284,19 +342,19 @@ No search results	Try different keywords or check internet connection
 Ratings not showing	Pull to refresh - API might be slow
 Build fails	Check EAS CLI version and login status
 Images not loading	Check Open Library cover ID availability
-📋 Requirements Checklist
-Requirement	Status	Implementation
-TypeScript	✅	Full TypeScript implementation
-Expo	✅	Built with Expo SDK 54
-Book Information	✅	Open Library API integration
-User Ratings	✅	Ratings API with star display
-Search Functionality	✅	Dynamic search with debouncing
-Error Handling	✅	Comprehensive error states
-Unit Testing	✅	22+ tests across components
-Android Support	✅	APK available for testing
-Figma Design	✅	Pixel-perfect implementation
+App crashes on startup	Run npx expo start --clear to clear cache
 
+Quick Fixes
+# Clear everything and restart
+rm -rf node_modules
+npm cache clean --force
+npm install
+npx expo start --clear
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+# Check environment
+node --version
+npm --version
+expo --version
 
+# Doctor check
+npx expo doctor
